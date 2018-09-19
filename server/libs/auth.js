@@ -254,6 +254,28 @@ module.exports = function (passport) {
     ))
   }
 
+  // Vinyl
+
+  if (appconfig.auth.vinyl && appconfig.auth.vinyl.enabled) {
+    const SamlStrategy = require('passport-saml').Strategy
+    passport.use('vinyl', new SamlStrategy({
+      host: appconfig.host,
+      issuer: appconfig.auth.vinyl.issuer,
+      cert: appconfig.auth.vinyl.cert,
+      callbackURL: appconfig.host + '/login/vinyl/callback'
+    }, (profile, cb) => {
+      db.User.processProfile({
+        provider: 'vinyl',
+        email: appconfig.auth.vinyl.authenticateAs
+      }).then((user) => {
+        return cb(null, user) || true
+      }).catch((err) => {
+        return cb(err, null) || true
+      })
+    }
+    ))
+  }
+
   // Create users for first-time
 
   db.onReady.then(() => {

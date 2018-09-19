@@ -35,6 +35,8 @@ defaults:
         enabled: false
       azure:
         enabled: false
+      vinyl:
+        enabled: true
     db: mongodb://localhost/wiki
     sessionSecret: null
     admin: null

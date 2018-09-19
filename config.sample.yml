@@ -113,6 +113,11 @@ auth:
     tokenURL: OPENID_CONNECT_TOKEN_URL
     emailClaim: OPENID_CONNECT_EMAIL_CLAIM_PATH
     usernameClaim: OPENID_CONNECT_USERNAME_CLAIM_PATH
+  vinyl:
+    enabled: true
+    issuer: VINYL_ISSUER
+    cert: VINYL_CERT
+    authenticateAs: VINYL_AUTHENTICATE_AS
 # ---------------------------------------------------------------------
 # Secret key to use when encrypting sessions
 # ---------------------------------------------------------------------

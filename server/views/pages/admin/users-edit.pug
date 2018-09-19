@@ -34,6 +34,7 @@ block adminContent
                 when 'github': i.icon-github.is-grey
                 when 'slack': i.icon-slack.is-purple
                 when 'ldap': i.icon-arrow-repeat-outline
+                when 'vinyl': i.icon-arrow-repeat-outline
                 default: i.icon-warning
               = t('auth:providers.' + usr.provider)
             td.is-centered= moment(usr.createdAt).format('lll')

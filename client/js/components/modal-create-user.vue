@@ -23,6 +23,7 @@
                   option(value='facebook') Facebook
                   option(value='github') GitHub
                   option(value='slack') Slack
+                  option(value='vinyl') Vinyl
             section(v-if='provider=="local"')
               label.label {{ $t('modal.createuserpassword') }}
               p.control.is-fullwidth
